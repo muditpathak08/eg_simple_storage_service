@@ -4,19 +4,19 @@ resource "aws_s3_bucket" "example" {
     tags = merge(tomap(var.tags),{Name = "var.bucket_name"})
 }
 
-#  resource "aws_s3_bucket_ownership_controls" "cf-s3-ownership" {
-#   bucket = aws_s3_bucket.example.id
-#   rule {
-#     object_ownership = "BucketOwnerEnforced"
-#   }
-# }
+resource "aws_s3_bucket_ownership_controls" "example" {
+  bucket = aws_s3_bucket.example.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
 
-# resource "aws_s3_bucket_acl" "example" {
-#   count = var.versioning == "Enabled" ? 1 : 0
-#   bucket = aws_s3_bucket.example.id
-#   acl    = "private"
-#   depends_on = [aws_s3_bucket_ownership_controls.cf-s3-ownership]
-# }
+resource "aws_s3_bucket_acl" "example" {
+  depends_on = [aws_s3_bucket_ownership_controls.example]
+
+  bucket = aws_s3_bucket.example.id
+  acl    = "private"
+}
 
 resource "aws_s3_bucket_versioning" "versioning_example" {
   count = var.versioning == "Enabled" ? 1 : 0

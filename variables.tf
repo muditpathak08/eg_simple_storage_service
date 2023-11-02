@@ -27,7 +27,7 @@ variable "Environment" {
 
 validation {
    condition     = contains(["Dev", "Test" ,"Sandbox", "Staging", "Production"], var.Environment)
-   error_message = "Please provide a valid value for variable Envrionment"
+   error_message = "Please provide a valid value for variable Envrionment. Allowed values are Dev, Test, Sandbox, Staging and Production"
  }
 }
 
