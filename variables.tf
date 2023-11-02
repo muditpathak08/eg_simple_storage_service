@@ -16,6 +16,15 @@ variable "versioning" {
   type        = string
 }
 
+variable "Environment" {
+  type    = "string"
+  default = "Dev"
+
+validation {
+   condition     = contains(["Dev", "Test" ,"Sandbox", "Staging", "Production"])
+   error_message = "Please provide a valid value for variable Envrionment"
+ }
+}
 
 
 variable "tags" {
