@@ -17,7 +17,7 @@ variable "versioning" {
 
   validation {
    condition     = contains(["Enabled", "Suspended" ], var.versioning)
-   error_message = "Please provide a valid value for variable versioning"
+   error_message = "Please provide a valid value for variable versioning, Allowed values are Enabled or Suspended"
  }
 }
 
