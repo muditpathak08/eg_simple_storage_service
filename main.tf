@@ -1,18 +1,17 @@
 resource "aws_s3_bucket" "example" {
   bucket = var.bucket_name
 
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
+    tags = merge(tomap(var.tags),{Name = "var.bucket_name"})
 }
 
 resource "aws_s3_bucket_acl" "example" {
+  count = var.versioning == "Enabled" ? 1 : 0
   bucket = aws_s3_bucket.example.id
   acl    = "private"
 }
 
 resource "aws_s3_bucket_versioning" "versioning_example" {
+  count = var.versioning == "Enabled" ? 1 : 0
   bucket = aws_s3_bucket.example.id
   versioning_configuration {
     status = "Enabled"
