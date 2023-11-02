@@ -34,12 +34,10 @@ validation {
 
 variable "tags" {
     default = {
-      ApplicationEnvironment             = ""
       ApplicationFunctionality              = "test@hotstar.com"
       ApplicationName              = "test@hotstar.com"
       ApplicationOwner                 = ""
       ApplicationTeam                       = ""
-      VersionEnable            = ""
       BusinessOwner = "test@hotmail.com"
       BusinessTower                  = ""
       AttachedIAMPolicy              = ""
