@@ -15,6 +15,7 @@ resource "aws_s3_bucket_acl" "example" {
   count = var.versioning == "Enabled" ? 1 : 0
   bucket = aws_s3_bucket.example.id
   acl    = "private"
+  depends_on = [aws_s3_bucket_ownership_controls.cf-s3-ownership]
 }
 
 resource "aws_s3_bucket_versioning" "versioning_example" {
