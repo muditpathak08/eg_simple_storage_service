@@ -1,5 +1,5 @@
 bucket_name = "s3-eil-data-test"
-versioning = "Suspended"
+versioning = "Enabled"
 Environment = "Dev"
 ApplicationOwner="abc@hotmail.com"
 ApplicationTeam="Team1"
