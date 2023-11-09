@@ -21,31 +21,53 @@ variable "versioning" {
  }
 }
 
-variable "Environment" {
-  type    = string
-  default = "Dev"
+  variable "Environment" {
+    type    = string
+    default = "Dev"
 
-validation {
-   condition     = contains(["Dev", "Test" ,"Sandbox", "Staging", "Production"], var.Environment)
-   error_message = "Please provide a valid value for variable Envrionment. Allowed values are Dev, Test, Sandbox, Staging and Production"
+  validation {
+    condition     = contains(["Dev", "Test" ,"Sandbox", "Staging", "Production"], var.Environment)
+    error_message = "Please provide a valid value for variable Envrionment. Allowed values are Dev, Test, Sandbox, Staging and Production"
+  }
+  }
+
+variable "ApplicationOwner" {
+  description = "Owner of the Application"
+  type        = string
+  default     = ""
+
+  validation {
+   condition     = contains(["abc@hotmail.com", "abc@gmail.com"], var.ApplicationOwner)
+   error_message = "Please provide a valid Application Owner"
+ }
+}
+
+variable "ApplicationTeam" {
+  description = "Owner of the Application"
+  type        = string
+  default     = ""
+
+  validation {
+   condition     = contains(["Team1","Team2"], var.ApplicationTeam)
+   error_message = "Please provide a valid Application Team"
+ }
+}
+
+ variable "BusinessOwner" {
+  description = "Business Owner"
+  type        = string
+  default     = ""
+
+  validation {
+   condition     = contains(["abc@gmail.com","xyz@gmail.com"], var.BusinessOwner)
+   error_message = "Please provide a valid BusinessOwner"
  }
 }
 
 
-variable "tags" {
+  variable "s3_tags" {
     default = {
-      ApplicationFunctionality              = "test@hotstar.com"
-      ApplicationName              = "test@hotstar.com"
-      ApplicationOwner                 = ""
-      ApplicationTeam                       = ""
-      BusinessOwner = "test@hotmail.com"
-      BusinessTower                  = ""
-      AttachedIAMPolicy              = ""
-      AttachedIAMRole             = ""
-      AttachedIAMUser         = ""
-      TicketReference                 = ""
-      DNSEntry                    = ""
     }
-    description = "Tags for S3(Simple Storage Service)"
+    description = "Tags for S3 bucket"
     type        = map(string)
   }
