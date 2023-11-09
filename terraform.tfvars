@@ -8,7 +8,7 @@ BusinessTower="abc@gmail.com"
 
 
 s3_tags = {
-      ApplicationFunctionality              = "test@hotstar.com"
+      ApplicationFunctionality              = "new@hotstar.com"
       ApplicationName              = "test@hotstar.com"
       AttachedIAMPolicy              = ""
       AttachedIAMRole             = ""
