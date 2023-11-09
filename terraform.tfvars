@@ -1,4 +1,4 @@
-bucket_name = "mudit31122023"
+bucket_name = "s3-eil-data-test"
 versioning = "Suspended"
 Environment = "Dev"
 ApplicationOwner="abc@hotmail.com"
