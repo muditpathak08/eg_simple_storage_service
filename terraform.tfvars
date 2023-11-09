@@ -1,5 +1,5 @@
 bucket_name = "mudit31122023"
-versioning = "Enabled"
+versioning = "Suspended"
 Environment = "Dev"
 ApplicationOwner="abc@hotmail.com"
 ApplicationTeam="Team1"
