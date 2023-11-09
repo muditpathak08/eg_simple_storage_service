@@ -10,10 +10,10 @@ BusinessTower="abc@gmail.com"
 s3_tags = {
       ApplicationFunctionality              = "new@hotstar.com"
       ApplicationName              = "test@hotstar.com"
-      AttachedIAMPolicy              = ""
-      AttachedIAMRole             = ""
-      AttachedIAMUser         = ""
-      TicketReference                 = ""
-      DNSEntry                    = ""
+      AttachedIAMPolicy              = "abc"
+      AttachedIAMRole             = "abc"
+      AttachedIAMUser         = "abc"
+      TicketReference                 = "abc"
+      DNSEntry                    = "abc"
 }
 
