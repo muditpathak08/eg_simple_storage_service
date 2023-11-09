@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "example" {
   bucket = var.bucket_name
 
-    tags = merge(tomap(var.tags),{"ApplicationEnvironment" = var.Environment,
+    tags = merge(tomap(var.s3_tags),{"ApplicationEnvironment" = var.Environment,
     "VersionEnable" = var.versioning})
 }
 
