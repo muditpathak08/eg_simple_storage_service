@@ -64,6 +64,18 @@ variable "ApplicationTeam" {
  }
 }
 
+variable "BusinessTower" {
+  description = "Business Tower"
+  type        = string
+  default     = ""
+
+  validation {
+   condition     = contains(["abc@gmail.com","xyz@gmail.com"], var.BusinessTower)
+   error_message = "Please provide a valid BusinessTower"
+ }
+}
+
+
 
   variable "s3_tags" {
     default = {

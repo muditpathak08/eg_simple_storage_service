@@ -2,7 +2,11 @@ resource "aws_s3_bucket" "example" {
   bucket = var.bucket_name
 
     tags = merge(tomap(var.s3_tags),{"ApplicationEnvironment" = var.Environment,
-    "VersionEnable" = var.versioning})
+    "VersionEnable" = var.versioning,
+    "ApplicationOwner" = var.ApplicationOwner,
+    "ApplicationTeam" = var.ApplicationTeam,
+    "BusinessOwner" = var.BusinessOwner,
+    "BusinessTower" = var.BusinessTower})
 }
 
 resource "aws_s3_bucket_ownership_controls" "example" {

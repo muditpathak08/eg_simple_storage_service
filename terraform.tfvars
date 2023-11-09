@@ -1,16 +1,15 @@
 bucket_name = "mudit31122023"
 versioning = "Enabled"
 Environment = "Dev"
-
+ApplicationOwner="abc@hotmail.com"
+ApplicationTeam="Team1"
+BusinessOwner="abc@gmail.com"
+BusinessTower="abc@gmail.com"
 
 
 s3_tags = {
       ApplicationFunctionality              = "test@hotstar.com"
       ApplicationName              = "test@hotstar.com"
-      ApplicationOwner                 = ""
-      ApplicationTeam                       = ""
-      BusinessOwner = "test@hotmail.com"
-      BusinessTower                  = ""
       AttachedIAMPolicy              = ""
       AttachedIAMRole             = ""
       AttachedIAMUser         = ""
