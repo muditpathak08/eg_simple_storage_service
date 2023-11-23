@@ -1,4 +1,3 @@
-
 resource "aws_s3_bucket" "project-iac-s3" {
   bucket = var.bucket_name
 
