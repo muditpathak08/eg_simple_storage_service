@@ -1,4 +1,4 @@
-bucket_name = "s3-eil-data-test"
+bucket_name = "s3-eil-data-test-new"
 versioning = "Suspended"
 Environment = "Dev"
 ApplicationOwner="abc@hotmail.com"
